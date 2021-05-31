@@ -1,6 +1,7 @@
 fetch("https://api.chucknorris.io/jokes/random")
-  .then(() => {
-    const jokeContainer = document.querySelector('joke');
+    .then(res => res.json())
+    .then((data) => {
+        const jokeContainer = document.querySelector('#joke');
 
-    jokeContainer.text = data.value;
-  })
+        jokeContainer.textContent = data.value;
+    })
